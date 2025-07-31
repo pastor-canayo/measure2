@@ -5,139 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Measurement Form</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f9fc;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f1f1f1;
     }
 
-    .container {
-          background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;;
-      padding: 30px 40px;  
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(5, 5, 5, 0.1);
-      width: 1000px;
-      text-align: center;
-    }
-    /*new changes here in this block*/
-    .oneLine, label, input, #additional{width: 150px}
-
-
-     .oneLine {
-        display: flex; /* Arranges children in a row */
-        flex-flow: row wrap; /* Allows wrapping to the next line if space is limited */
-        align-items: center; /* Vertically aligns items in the center */
-        gap: 10px; /* Adds space between elements */
-      
-    }
-
-    .oneLine label,
-    .oneLine input,
-    .oneLine button {
-        /* Optional: Adjust margins/padding for better spacing if needed */
-        margin: 55px 0;
-    }
-     .oneLine1, label, input, #additional1{width: 150px}
-     .oneLine1 {
-        display: flex; /* Arranges children in a row */
-        flex-flow: row wrap; /* Allows wrapping to the next line if space is limited */
-        align-items: center; /* Vertically aligns items in the center */
-        gap: 10px; /* Adds space between elements */
-    } 
-
-    .oneLine1 label,
-    .oneLine1 input,
-    .oneLine1 button {
-        /* Optional: Adjust margins/padding for better spacing if needed */
-        margin: 55px 0;
-    }
-       /*end of changes*/
-
-    .logo {
-      width: 60px;
-      margin-bottom: 20px;
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     h2 {
-      margin-bottom: 25px;
-      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 150px;
+      display: flex;
+      flex-direction: column;
     }
 
     label {
-      display: block;
-      margin: 10px 0 5px;
-      font-weight: 500;
-      text-align: left;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
-    input[type="number"] {
-      width: 100%;
-      padding: 10px;
+    input, textarea {
+      padding: 8px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
-      box-sizing: border-box;
     }
 
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
+    textarea {
+      resize: vertical;
+      min-height: 60px;
     }
 
-    button:hover {
-      background-color: #0056b3;
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Replace with your actual logo -->
-    <img src="https://cdn-icons-png.flaticon.com/512/2724/2724560.png" alt="Measurement Logo" class="logo">
-    
-    <h2>Enter Measurements</h2>
-    <form>
-      <div class="oneLine">
-      <label for="length">Length (in)</label>
-      <input type="number" id="additional" name="length" placeholder="e.g. 100" required>
-
-      <label for="width">Onces (in)</label>
-      <input type="number" id="additional" name="width" placeholder="e.g. 50" required>
-
-      <label for="width">Numbers (in)</label>
-      <input type="number" id="additional" name="width" placeholder="e.g. 50" required>
+<div class="form-container">
+  <h2>Measurement Form</h2>
+  <form>
+    <!-- Row 1: Length, Ounces, Number -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="length">Length</label>
+        <input type="number" id="length" name="length" placeholder="Enter length">
       </div>
-      <label for="height">Description (in)</label>
-      <input type="number" id="height" name="height" placeholder="e.g. 30" required>
-
-      <label for="weight">Randon Crap (lb)</label>
-      <input type="number" id="weight" name="weight" placeholder="e.g. 10" required>
-      <div class="oneLine1">
-         <label for="width">Width (in)</label>
-      <input type="number" id="additional1" name="width" placeholder="e.g. 50" required>
-
-      <label for="height">Height (in)</label>
-      <input type="number" id="additional1" name="height" placeholder="e.g. 30" required>
-
-      <label for="weight">Weight (lb)</label>
-      <input type="number" id="additional1" name="weight" placeholder="e.g. 10" required>
+      <div class="form-group">
+        <label for="ounces">Ounces</label>
+        <input type="number" id="ounces" name="ounces" placeholder="Enter ounces">
       </div>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+      <div class="form-group">
+        <label for="number">Number</label>
+        <input type="number" id="number" name="number" placeholder="Enter number">
+      </div>
+    </div>
+
+    <!-- Row 2: Description -->
+    <div class="form-row">
+      <div class="form-group" style="flex: 1 1 100%;">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Enter description"></textarea>
+      </div>
+    </div>
+
+    <!-- Row 3: Name -->
+    <div class="form-row">
+      <div class="form-group" style="flex: 1 1 100%;">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter name">
+      </div>
+    </div>
+
+    <!-- Row 4: Width, Height, Weight -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="width">Width</label>
+        <input type="number" id="width" name="width" placeholder="Enter width">
+      </div>
+      <div class="form-group">
+        <label for="height">Height</label>
+        <input type="number" id="height" name="height" placeholder="Enter height">
+      </div>
+      <div class="form-group">
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter weight">
+      </div>
+    </div>
+  </form>
+</div>
 
 </body>
 </html>
+
+
