@@ -56,6 +56,20 @@
         /* Optional: Adjust margins/padding for better spacing if needed */
         margin: 55px 0;
     }
+     .oneLin1e, label, input, #additional1{width: 150px}
+     .oneLine1 {
+        display: flex; /* Arranges children in a row */
+        flex-flow: row wrap; /* Allows wrapping to the next line if space is limited */
+        align-items: center; /* Vertically aligns items in the center */
+        gap: 10px; /* Adds space between elements */
+    }
+
+    .oneLine1 label,
+    .oneLine1 input,
+    .oneLine1 button {
+        /* Optional: Adjust margins/padding for better spacing if needed */
+        margin: 55px 0;
+    }
        /*end of changes*/
 
     .logo {
@@ -124,15 +138,15 @@
 
       <label for="weight">Randon Crap (lb)</label>
       <input type="number" id="weight" name="weight" placeholder="e.g. 10" required>
-      <div class="oneLine">
+      <div class="oneLine1">
          <label for="width">Width (in)</label>
-      <input type="number" id="additional" name="width" placeholder="e.g. 50" required>
+      <input type="number" id="additional1" name="width" placeholder="e.g. 50" required>
 
       <label for="height">Height (in)</label>
-      <input type="number" id="additional" name="height" placeholder="e.g. 30" required>
+      <input type="number" id="additional1" name="height" placeholder="e.g. 30" required>
 
       <label for="weight">Weight (lb)</label>
-      <input type="number" id="additional" name="weight" placeholder="e.g. 10" required>
+      <input type="number" id="additional1" name="weight" placeholder="e.g. 10" required>
       </div>
       <button type="submit">Submit</button>
     </form>
