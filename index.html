@@ -27,21 +27,35 @@
     }
     /*new changes here in this block*/
     label, input, #additional{width: 50px}
-     .oneLine {
+/*      .oneLine {
          display: flex;
       flex-flow: row wrap;
       align-items: center
-    }
+    } */
 /*     .oneLine label {
       margin: 5px 10px 5px 0;
-    } */
-    .oneLine input {
+    }  */
+/*     .oneLine input {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 10px;
   background-color: #fff;
   border: 1px solid #ddd;
-}
+} */
+
+     .oneLine {
+        display: flex; /* Arranges children in a row */
+        flex-flow: row wrap; /* Allows wrapping to the next line if space is limited */
+        align-items: center; /* Vertically aligns items in the center */
+        gap: 10px; /* Adds space between elements */
+    }
+
+    .oneLine label,
+    .oneLine input,
+    .oneLine button {
+        /* Optional: Adjust margins/padding for better spacing if needed */
+        margin: 5px 0;
+    }
        /*end of changes*/
 
     .logo {
